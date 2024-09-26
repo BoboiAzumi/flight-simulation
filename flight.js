@@ -20,7 +20,15 @@ class EngineError extends Error {
 }
 
 function takeOff() {
-    // TODO
+    try {
+        if (Math.random() > 0.5) {
+            throw new Error('Cannot take off the flight');
+        }
+        const currentTime = new Date().toLocaleTimeString();
+        console.log(`Plane is taking off at ${currentTime}`);
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+    }
 }
 
 function flight(latitude) {
@@ -33,11 +41,15 @@ function flight(latitude) {
         throw new FlightError('Tidak dapat terbang dengan baik di ketinggian ini');
     }
     console.log('Terbang di ketinggian: ', latitude);
-    console.log('testing')
 }
 
 function land() {
-    // TODO
+    try {
+        const currentTime = new Date().toLocaleTimeString();
+        console.log(`Plane is landing at ${currentTime}`);
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+    }
 }
 
 function planeSimulation(fly, latitude) {
