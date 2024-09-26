@@ -41,7 +41,15 @@ function land() {
 
 function planeSimulation(fly, latitude) {
     try{
-
+        if(fly === 0){
+            takeOff()
+        }
+        while(fly < 3){
+            flight(latitude)
+            latitude += Math.round(Math.random() * 1000)
+        }
+        
+        land()
     }
     catch (error){
         if(error instanceof TakeOffError){
