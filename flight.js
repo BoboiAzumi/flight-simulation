@@ -24,7 +24,15 @@ function takeOff() {
 }
 
 function flight(latitude) {
-    // TODO
+    if (Math.random() > 0.90) {
+        throw new EngineError('Mesin tidak berkerja, ada kerusakan');
+    }
+
+    if (latitude > 11000 || latitude < 1000) {
+        console.log('Pesawat terbang di ketinggian: ', latitude);
+        throw new FlightError('Tidak dapat terbang dengan baik di ketinggian ini');
+    }
+    console.log('Terbang di ketinggian: ', latitude);
 }
 
 function land() {
