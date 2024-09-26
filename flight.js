@@ -41,10 +41,12 @@ function land() {
 
 function planeSimulation(fly, latitude) {
     try{
-        
+
     }
     catch (error){
-
+        if(error instanceof TakeOffError){
+            console.log(error.message)
+        }
     }
 }
 
