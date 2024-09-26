@@ -40,7 +40,12 @@ function land() {
 }
 
 function planeSimulation(fly, latitude) {
-    // TODO
+    try{
+        
+    }
+    catch (error){
+
+    }
 }
 
 let latitude = Math.floor(Math.random() * 10000);
