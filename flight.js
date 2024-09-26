@@ -33,6 +33,7 @@ function flight(latitude) {
         throw new FlightError('Tidak dapat terbang dengan baik di ketinggian ini');
     }
     console.log('Terbang di ketinggian: ', latitude);
+    console.log('testing')
 }
 
 function land() {
