@@ -55,6 +55,20 @@ function planeSimulation(fly, latitude) {
         if(error instanceof TakeOffError){
             console.log(error.message)
         }
+        else if(error instanceof FlightError){
+            latitude = 9000;
+            if(fly < 3){
+                fly++
+                console.log("Mencoba terbang kembali")
+                planeSimulation(fly, latitude)
+            }
+        }
+        else if (error instanceof EngineError) {
+            console.log('Pesawat rusak');
+        } else {
+            console.log('Gagal simulasi');
+        }
+        
     }
 }
 
